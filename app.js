@@ -12,7 +12,7 @@ var express = require('express'),
   env = app.get('env'),
 
   // Define downstream vars
-  auth, mobile, helper, pageMiddleware;
+  email, auth, mobile, helper, pageMiddleware;
 
 app.set( 'port', process.env.PORT || process.env.VCAP_APP_PORT || 8125 );
 app.use(express.cookieParser());
@@ -22,6 +22,7 @@ app.set( 'views', __dirname + '/views' );
 app.set( 'view engine', 'hogan' );
 app.engine( 'hogan', require('hogan-express') );
 
+email   = require( BASE_DIR + '/util/email');
 auth    = require( BASE_DIR + '/util/auth');
 mobile  = require( BASE_DIR + '/util/mobile');
 helper  = require( BASE_DIR + '/util/helper' );
@@ -43,10 +44,19 @@ pageMiddleware = [
   helper.createPage
 
 ];
+
+sendApplicationWare = [
+
+  email.getInput,
+  email.sendEmail
+
+];
+
 app.get('/', pageMiddleware );
 app.get('/home', pageMiddleware );
 app.get('/application', pageMiddleware );
 app.get('/era/:era', pageMiddleware );
+app.get('/email-test',sendApplicationWare);
 
 
 http.createServer( app ).listen( app.get('port'), function() {
