@@ -1,0 +1,11 @@
+<!--
+============================================================
+TEMPLATE: Leaders col
+============================================================
+-->
+<script type="text/template" id="tplMatchStats">
+  <div class="match-bar__col cols cols2 clearfix">
+	<div class="col i-<%= data.shade %>"><span class="<%= data.area %> <%= data.area %>_home"><%= data.amount_home %></span><i class="team-color team-color_home TEAM-COLOR-<%= data.teamAbbr_home %>"></i></div>
+	<div class="col i-<%= data.shade %>"><span class="<%= data.area %> <%= data.area %>_away"><%= data.amount_away %></span><i class="team-color team-color_away TEAM-COLOR-<%= data.teamAbbr_away %>"></i></div>
+	</div><!--/match-col-->
+</script>

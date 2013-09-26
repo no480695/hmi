@@ -1,0 +1,80 @@
+<!--
+============================================================
+TEMPLATE: player Mathcups
+============================================================
+-->
+
+<script type="text/template" id="tplPlayerMatchup">
+    <div class="matchup-bar">
+        <select name="matchup-home" id="matchup-home" class="sel i-light">
+            <% _.each(data.home_team,function(player){ %>
+                <option value="<%= player.player_code %>">
+                <%= player.name['first-name'] %>
+                <%= player.name['last-name'] %>
+                </option>
+            <% }); %>
+        </select>
+        <span class="matchup-vs">vs</span>
+        <select name="matchup-away" id="matchup-away" class="sel i-light">
+            <% _.each(data.away_team,function(player){ %>
+                <option value="<%= player.player_code %>">
+                <%= player.name['first-name'] %>
+                <%= player.name['last-name'] %>
+                </option>
+            <% }); %>
+        </select>
+    </div><!--/matchup-bar-->
+    <div class="matchup clearfix">
+        <div class="matchup-player matchup-player_home">
+            <div class="matchup-pic TEAM-COLOR-<%= data.homeAbbr %> flippy"><img id="primary_home_matchup_image" src="/common/img/large/<%= data.player_photo_home %>.png" alt="Player Image" class="player-img player-img_l"></div><!--/matchup-pic-->
+            <a href="#player-card" rel="modal" id="player-<%= data.player_photo_home %>-home" class="btn btn_matchup js-inited homeplayer_card">Complete Stats</a>
+        </div><!--/matchup-player-home-->
+
+
+        <div class="matchup-stats">
+            <div class="home-stat home-per stat-col TEAM-COLOR-<%= data.homeAbbr %>" style="height:150px;margin-top:15px">31.8</div>
+            <div class="away-stat away-per stat-col TEAM-COLOR-<%= data.awayAbbr %>" style="height:160px;margin-top:5px">31.8</div>
+            <div class="home-stat home-pts stat-col TEAM-COLOR-<%= data.homeAbbr %>" style="height:<%= data.home_pts_height %>px;margin-top:<%= data.home_pts_margin %>px"><%= data.home_pts %></div>
+            <div class="away-stat away-pts stat-col TEAM-COLOR-<%= data.awayAbbr %>" style="height:<%= data.away_pts_height %>px;margin-top:<%= data.away_pts_margin %>px"><%= data.away_pts %></div>
+            <div class="home-stat home-ast stat-col TEAM-COLOR-<%= data.homeAbbr %>" style="height:<%= data.home_ast_height %>px;margin-top:<%= data.home_ast_margin %>px"><%= data.home_ast %></div>
+            <div class="away-stat away-ast stat-col TEAM-COLOR-<%= data.awayAbbr %>" style="height:<%= data.away_ast_height %>px;margin-top:<%= data.away_ast_margin %>px"><%= data.away_ast %></div>
+            <div class="home-stat home-reb stat-col TEAM-COLOR-<%= data.homeAbbr %>" style="height:<%= data.home_reb_height %>px;margin-top:<%= data.home_reb_margin %>px"><%= data.home_reb %></div>
+            <div class="away-stat away-reb stat-col TEAM-COLOR-<%= data.awayAbbr %>" style="height:<%= data.away_reb_height %>px;margin-top:<%= data.away_reb_margin %>px"><%= data.away_reb %></div>
+        </div>
+
+
+        <div class="matchup-player matchup-player_away">
+            <div class="matchup-pic TEAM-COLOR-<%= data.awayAbbr %>"><img id="primary_away_matchup_image" src="/common/img/large/<%= data.player_photo_away %>.png" alt="Player image" class="player-img player-img_l"></div><!--/matchup-pic-->
+            <a href="#player-card" rel="modal" id="player-<%= data.player_photo_away %>-away" class="btn btn_matchup js-inited awayplayer_card">Complete Stats</a>
+        </div><!--/matchup-player-away-->
+    </div><!--/matchup-->
+
+</script>
+
+<!--
+============================================================
+TEMPLATE: Leaders col
+============================================================
+-->
+<script type="text/template" id="tplLeaderCol">
+    <h4 class="leaders-col__head"><%= data.stat %></h4>
+    <div class="leader-col__pic TEAM-COLOR-<%= data.teamAbbr %>"><img src="/common/img/large/<%= data.player_photo %>.png" alt="Player image" class="player-img player-img_m"></div>
+    <ol class="leaders__positions">
+        <li class="leaders__position">
+            <p class="leader-index"><%= data.value1 %></p>
+            <span class="leader-position">1</span>
+            <span class="leader-name"><%= data.name1 %></span>
+        </li>
+        <li class="leaders__position">
+            <p class="leader-index"><%= data.value2 %></p>
+            <span class="leader-position">2</span>
+            <span class="leader-name"><%= data.name2 %></span>
+        </li>
+        <li class="leaders__position">
+            <p class="leader-index"><%= data.value3 %></p>
+            <span class="leader-position">3</span>
+            <span class="leader-name"><%= data.name3 %></span>
+        </li>
+    </ol>
+</script>
+

@@ -1,0 +1,92 @@
+<!--
+============================================================
+TEMPLATE: Boxscore
+============================================================
+-->
+
+<script type="text/template" id="tplBoxscore">
+    <div class="lineup-score scroll-pane scroll-pane_vertical jspScrollable" tabindex="0" style="overflow: hidden; padding: 0px; width: 900px;">
+        <h4 class="lineup-score-team i-dark"><%= data.home_full_name %></h4>
+        <table class="lineup-score-data">
+            <tbody>
+                <tr>
+                    <th class="lineup-score-name ls_l">&nbsp;</th>
+                    <th class="lineup-score-pos ls_m">pos</th>
+                    <th class="lineup-score-min ls_s">min</th>
+                    <th class="lineup-score-fgma ls_m">fgm-a</th>
+                    <th class="lineup-score-3pma ls_m">3pm-a</th>
+                    <th class="lineup-score-ftma ls_m">ftm-a</th>
+                    <th class="lineup-score-updown ls_m">+/-</th>
+                    <th class="lineup-score-off ls_s">off</th>
+                    <th class="lineup-score-def ls_s">def</th>
+                    <th class="lineup-score-tot ls_s">tot</th>
+                    <th class="lineup-score-ast ls_s">ast</th>
+                    <th class="lineup-score-pf ls_s">pf</th>
+                    <th class="lineup-score-st ls_s">st</th>
+                    <th class="lineup-score-to ls_s">to</th>
+                    <th class="lineup-score-bs ls_s">bs</th>
+                    <th class="lineup-score-ba ls_s">ba</th>
+                    <th class="lineup-score-pts ls_m">pts</th>
+                </tr
+                <% _.each(data.home_player_array, function(player){ %>
+                    <%= player %>
+                <% }); %>
+            </tbody>
+        </table>
+        <h4 class="lineup-score-team i-dark"><%= data.away_full_name %></h4>
+        <table class="lineup-score-data">
+            <tbody>
+                <tr>
+                    <th class="lineup-score-name ls_l">&nbsp;</th>
+                    <th class="lineup-score-pos ls_m">pos</th>
+                    <th class="lineup-score-min ls_s">min</th>
+                    <th class="lineup-score-fgma ls_m">fgm-a</th>
+                    <th class="lineup-score-3pma ls_m">3pm-a</th>
+                    <th class="lineup-score-ftma ls_m">ftm-a</th>
+                    <th class="lineup-score-updown ls_m">+/-</th>
+                    <th class="lineup-score-off ls_s">off</th>
+                    <th class="lineup-score-def ls_s">def</th>
+                    <th class="lineup-score-tot ls_s">tot</th>
+                    <th class="lineup-score-ast ls_s">ast</th>
+                    <th class="lineup-score-pf ls_s">pf</th>
+                    <th class="lineup-score-st ls_s">st</th>
+                    <th class="lineup-score-to ls_s">to</th>
+                    <th class="lineup-score-bs ls_s">bs</th>
+                    <th class="lineup-score-ba ls_s">ba</th>
+                    <th class="lineup-score-pts ls_m">pts</th>
+                </tr>
+                <% _.each(data.away_player_array, function(player){ %>
+                    <%= player %>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<!--
+============================================================
+TEMPLATE: Boxscore Player
+============================================================
+-->
+<script type="text/template" id="tplBoxscorePlayerRow">
+    <tr>
+        <td><%= data.player_name %></td>
+        <td><%= data.pos %></td>
+        <td><%= data.min %></td>
+        <td><%= data.fgm_a %></td>
+        <td><%= data.three_pm_a %></td>
+        <td><%= data.ftm_a %></td>
+        <td><%= data.plus_minus %></td>
+        <td><%= data.off %></td>
+        <td><%= data.def %></td>
+        <td><%= data.tot %></td>
+        <td><%= data.ast %></td>
+        <td><%= data.pf %></td>
+        <td><%= data.st %></td>
+        <td><%= data.to %></td>
+        <td><%= data.bs %></td>
+        <td><%= data.ba %></td>
+        <td><%= data.pts %></td>
+    </tr>
+</script>
+

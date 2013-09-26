@@ -1,0 +1,78 @@
+<!--
+============================================================
+TEMPLATE: playerCard
+============================================================
+-->
+<script type="text/template" id="tplPlayerCard">
+	<div class="player-card__cols">
+		<div class="player-card__primary player-card__col">
+			<div class="matchup-pic player-card__pic TEAM-COLOR-<%= data.color_abbr %>">
+				<img src="/common/img/large/<%= data.player_code %>.png" alt="Player image" class="player-img player-img_l">
+			</div>
+			<p class="player-card__name"><% data.player_name %></p>
+		</div><!--/player-card :: primary-->
+		<div class="player-card__secondary player-card__col">
+			<ul class="player-card__data">
+				<li class="player-card__data-item"><span class="player-card__data-index">Height:</span><span class="player-card__data-value"><%= data.height %></span></li>
+				<li class="player-card__data-item"><span class="player-card__data-index">Weight:</span><span class="player-card__data-value"><%= data.weight %></span></li>
+				<li class="player-card__data-item"><span class="player-card__data-index">Age:</span><span class="player-card__data-value"><%= data.age %></span></li>
+				<li class="player-card__data-item"><span class="player-card__data-index">College:</span><span class="player-card__data-value"><%= data.college %></span></li>
+				<!--<li class="player-card__data-item"><span class="player-card__data-index">Location:</span><span class="player-card__data-value"><%= data.location %></span></li>-->
+				<li class="player-card__data-item"><span class="player-card__data-index">Debut:</span><span class="player-card__data-value"><%= data.debut %></span></li>
+				<!--<li class="player-card__data-item"><span class="player-card__data-index">Salary:</span><span class="player-card__data-value"><%= data.salary %></span></li>-->
+				<li class="player-card__data-item"><span class="player-card__data-index">Experience:</span><span class="player-card__data-value"><%= data.experience %></span></li>
+			</ul>
+		</div><!--/player-card :: secondary-->
+		<div class="player-card__graph player-card__col player-card__col_wide">
+
+				<div class="home-stat home-per stat-col TEAM-COLOR-<%= data.color_abbr %>" style="height:<%= data.pre_height %>px;margin-left:17px;margin-top:<%= data.pre_margin %>px">31.8</div>
+				<div class="home-stat home-per stat-col TEAM-COLOR-<%= data.color_abbr %>" style="height:<%= data.pts_height %>px;margin-top:<%= data.pts_margin %>px"><%= data.pts %></div>
+				<div class="home-stat home-per stat-col TEAM-COLOR-<%= data.color_abbr %>" style="height:<%= data.ast_height %>px;margin-top:<%= data.ast_margin %>px"><%= data.ast %></div>
+				<div class="home-stat home-per stat-col TEAM-COLOR-<%= data.color_abbr %>" style="height:<%= data.reb_height %>px;margin-top:<%= data.reb_margin %>px"><%= data.reb %></div>
+
+				<span class="player-card-stat-label pcsl-one">PER</span>
+				<span class="player-card-stat-label pcsl-two">PTS</span>
+				<span class="player-card-stat-label pcsl-three">AST</span>
+				<span class="player-card-stat-label pcsl-four">REB</span>
+
+
+		</div><!--/player-card :: graph-->
+	</div><!--/player-card :: cols-->
+	<div class="player-card__stats">
+		<p class="player-card__stats-head i-head i-dark" style="margin-top:0px;margin-bottom:0px;padding: 7px;text-align:center;">Currrent game stats</p>
+		<table class="lineup-score-data">
+			<tbody><tr>
+				<th class="lineup-score-min ls_s">min</th>
+				<th class="lineup-score-fgma ls_m">fgm-a</th>
+				<th class="lineup-score-3pma ls_m">3pm-a</th>
+				<th class="lineup-score-ftma ls_m">ftm-a</th>
+				<th class="lineup-score-updown ls_m">+/-</th>
+				<th class="lineup-score-off ls_s">off</th>
+				<th class="lineup-score-def ls_s">def</th>
+				<th class="lineup-score-tot ls_s">tot</th>
+				<th class="lineup-score-ast ls_s">ast</th>
+				<th class="lineup-score-pf ls_s">pf</th>
+				<th class="lineup-score-st ls_s">st</th>
+				<th class="lineup-score-to ls_s">to</th>
+				<th class="lineup-score-bs ls_s">bs</th>
+				<th class="lineup-score-pts ls_m">pts</th>
+			</tr>
+			<tr>
+				<td><%= data.current_min %></td>
+				<td><%= data.current_fgm_a %></td>
+				<td><%= data.current_3pm_a %></td>
+				<td><%= data.current_ftm_a %></td>
+				<td><%= data.current_plus_minus %></td>
+				<td><%= data.current_off %></td>
+				<td><%= data.current_def %></td>
+				<td><%= data.current_tot %></td>
+				<td><%= data.current_ast %></td>
+				<td><%= data.current_pf %></td>
+				<td><%= data.current_st %></td>
+				<td><%= data.current_to %></td>
+				<td><%= data.current_bs %></td>
+				<td><%= data.current_pts %></td>
+			</tr>
+		</tbody></table>
+	</div><!--/player-card :: stats-->
+</script>

@@ -1,0 +1,10 @@
+
+{{> sections.header }}
+
+<div class="main">
+
+	<h1>Application</h1>
+
+</div><!-- /.main -->
+
+{{> sections.footer }}

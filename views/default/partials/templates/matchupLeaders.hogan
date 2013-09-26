@@ -1,0 +1,26 @@
+<!--
+============================================================
+TEMPLATE: matchupLeaders
+============================================================
+-->
+
+<script type="text/template" id="tplMatchupLeaders">
+    <h4 class="stats-heading stats-heading_single i-light"><%= data.view_type %></h4><!--/stats-heading-->
+        <div class="field-options cols cols2 clearfix">
+            <p class="col"><%= data.home_player_name %></p>
+            <p class="col"><%= data.away_player_name %></p>
+        </div><!--/field-options-->
+        <div class="tabs">
+            <div class="tab active" data-tab-id="#match-show">
+                <div class="matchup matchup_mini clearfix">
+                    <div class="matchup-player matchup-player_home">
+                        <div class="matchup-pic TEAM-COLOR-<%= data.home_team_abbr %>"><img src="/common/img/large/<%= data.home_player_id %>.png" alt="Player image" class="player-img player-img_l"></div><!--/matchup-pic-->
+                    </div><!--/matchup-player-home-->
+
+                    <div class="matchup-player matchup-player_away">
+                        <div class="matchup-pic TEAM-COLOR-<%= data.away_team_abbr %>"><img src="/common/img/large/<%= data.away_player_id %>.png" alt="Player image" class="player-img player-img_l"></div><!--/matchup-pic-->
+                    </div><!--/matchup-player-away-->
+                </div><!--/matchup-->
+            </div><!--/tab #rebound-1st-->
+        </div><!--/tabs-->
+</script>

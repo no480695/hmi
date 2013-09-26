@@ -1,0 +1,50 @@
+<!--
+============================================================
+TEMPLATE: foulsView
+============================================================
+-->
+
+<script type="text/template" id="tplFoulsView">
+    <table class="fouls-leaders">
+        <tbody><tr class="i-dark">
+            <td class="q-fouls TEAM-COLOR-<%= data.home_team_abbr %>">
+                <%= data.home_first_value %>
+            </td>
+            <td class="player-name"><%= data.home_first_name %></td>
+            <td class="q-fouls TEAM-COLOR-<%= data.away_team_abbr %>">
+                <%= data.away_first_value %>
+            </td>
+            <td class="player-name"><%= data.away_first_name %></td>
+        </tr>
+        <tr class="i-light">
+            <td class="q-fouls TEAM-COLOR-<%= data.home_team_abbr %>">
+                <%= data.home_second_value %>
+            </td>
+            <td class="player-name"><%= data.home_second_name %></td>
+            <td class="q-fouls TEAM-COLOR-<%= data.away_team_abbr %>">
+                <%= data.away_second_value %>
+            </td>
+            <td class="player-name"><%= data.away_second_name %></td>
+        </tr>
+        <tr class="i-dark">
+            <td class="q-fouls TEAM-COLOR-<%= data.home_team_abbr %>">
+                <%= data.home_third_value %>
+            </td>
+            <td class="player-name"><%= data.home_third_name %></td>
+            <td class="q-fouls TEAM-COLOR-<%= data.away_team_abbr %>">
+                <%= data.away_third_value %>
+            </td>
+            <td class="player-name"><%= data.away_third_name %></td>
+        </tr>
+        <tr class="i-light">
+            <td class="q-fouls TEAM-COLOR-<%= data.home_team_abbr %>">
+                <%= data.home_fourth_value %>
+            </td>
+            <td class="player-name"><%= data.home_fourth_name %></td>
+            <td class="q-fouls TEAM-COLOR-<%= data.away_team_abbr %>">
+                <%= data.away_fourth_value %>
+            </td>
+            <td class="player-name"><%= data.away_fourth_name %></td>
+        </tr>
+    </tbody></table><!--/fouls-leaders-->
+</script>

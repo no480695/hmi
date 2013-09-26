@@ -1,0 +1,35 @@
+<!--
+============================================================
+TEMPLATE: leagueGame TODO: add game links
+============================================================
+-->
+
+<script type="text/template" id="tplLeagueGame">
+    <div class="score-board__item item" style="position: static; top: 0px; left: 0px; z-index: 95; display: inline-block;">
+        <p class="score-board__item-header i-head i-light"><%= data.status %></p>
+        <p class="score-board__item-row <%= data.home_win %>"><span class="score-board__item-abbr"><%= data.home_abbr %></span><span class="score-board__item-points"><%= data.home_score %></span></p>
+        <p class="score-board__item-row <%= data.away_win %>"><span class="score-board__item-abbr"><%= data.away_abbr %></span><span class="score-board__item-points"><%= data.away_score %></span></p>
+
+        <% if ( data.status == 'final' ){ %>
+            <div class="score-board__item-overlay"><a href="/game/<%= data.game_code %>" class="score-board__item-overlay-caption">recap</a></div>
+        <% }
+            else{ %>
+            <div class="score-board__item-overlay"><a href="/game/<%= data.game_code %>" class="score-board__item-overlay-caption">preview</a></div>
+        <% } %>
+
+    </div>
+</script>
+
+<!--
+============================================================
+TEMPLATE: leagueGameHolder
+============================================================
+-->
+
+<script type="text/template" id="tplLeagueGameHolder">
+
+        <%= data.games %>
+
+        <a href="#" class="control prev"><i class="arrow"></i></a>
+        <a href="#" class="control next disabled"><i class="arrow"></i></a>
+</script>

@@ -1,0 +1,48 @@
+<!--
+============================================================
+TEMPLATE: courtView
+============================================================
+-->
+
+<script type="text/template" id="tplCourtView">
+    <div class="tabs-wrap field">
+        <div class="stats-heading i-dark">
+            <select name="court-home" id="court-home" class="sel i-light">
+                <option value="<% _.each(data.home_team,function(player){ %><%= player.player_code %> <% });%>">All</option>
+                <% _.each(data.home_team,function(player){ %>
+                    <option value="<%= player.player_code %>">
+                        <%= player.name['first-name'] %>
+                        <%= player.name['last-name'] %>
+                    </option>
+                <% }); %>
+            </select>
+            <span class="stats-heading-vs">vs</span>
+            <select name="court-away" id="court-away" class="sel i-light">
+                <option value="<% _.each(data.away_team,function(player){ %><%= player.player_code %> <% });%>">All</option>
+                <% _.each(data.away_team,function(player){ %>
+                    <option value="<%= player.player_code %>">
+                    <%= player.name['first-name'] %>
+                    <%= player.name['last-name'] %>
+                </option>
+        <% }); %>
+            </select>
+        </div><!--/stats-heading-->
+        <div class="tabs">
+            <div class="courtBuffer"></div>
+            <div class="tab active" data-tab-id="#courtViewArea">
+                <div style="width:450px">
+                    <div id="fullCourtChart" style="height:219px"></div>
+                </div>
+            </div><!--/tab #shots-1st-->
+            <div class="courtBuffer"></div>
+        </div><!--/tabs-->
+        <div class="tabs-header tabs-header_full tabs-header_col5 triggers">
+            <a href="#" class="court-quarter tab-trigger tab-trigger_s i-light active" data-tab="#courtViewArea">1st</a>
+            <a href="#" class="court-quarter tab-trigger tab-trigger_s i-dark" data-tab="#courtViewArea">2nd</a>
+            <a href="#" class="court-quarter tab-trigger tab-trigger_s i-light" data-tab="#courtViewArea">3rd</a>
+            <a href="#" class="court-quarter tab-trigger tab-trigger_s i-dark" data-tab="#courtViewArea">4th</a>
+            <a href="#" class="court-quarter tab-trigger tab-trigger_s i-light" data-tab="#courtViewArea">all</a>
+        </div><!--/tabs-triggers-->
+    </div><!--/tab-wrap-->
+</script>
+

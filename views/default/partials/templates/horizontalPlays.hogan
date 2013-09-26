@@ -1,0 +1,43 @@
+<!--
+============================================================
+TEMPLATE: Horizontal Play
+============================================================
+-->
+<script type="text/template" id="tplHorizontalPlay">
+     <div id="seq_<%= data.seq %>"class="info-strip__item play__item" style="height:84px;">
+        <span class="event-quarter"><%= data.quarter %></span>
+        <span class="event-time"><%= data.clock %></span>
+        <span class="event-type"><%= data.type %></span>
+        <p class="event-entity"><%= data.text %></p>
+    </div>
+</script>
+
+
+<!--
+============================================================
+TEMPLATE: Horizontal Play Before Slide
+============================================================
+-->
+<script type="text/template" id="tplHorizontalPlaySlide">
+     <div id="seq_<%= data.seq %>"class="info-strip__item play__item" style="height:84px;display:none">
+        <span class="event-quarter"><%= data.quarter %></span>
+        <span class="event-time"><%= data.clock %></span>
+        <span class="event-type"><%= data.type %></span>
+        <p class="event-entity"><%= data.text %></p>
+    </div>
+</script>
+
+
+<!--
+============================================================
+TEMPLATE: Horizontal Play Holder
+============================================================
+-->
+<script type="text/template" id="tplHorizontalPlayHolder">
+    <div class="play-pane info-strip info-strip_col3 scroll-pane scroll-pane_horizontal jspScrollable" tabindex="0" style="overflow: hidden; padding: 0px; width: 900px;">
+                <div id="play_holder" class="info-strip__items light clearfix">
+                    <%= data.plays %>
+                </div>
+
+    </div>
+</script>

@@ -1,0 +1,12 @@
+
+{{> sections.header }}
+
+<div class="main">
+
+	<h1>Era</h1>
+
+	{{ page.era }}
+
+</div><!-- /.main -->
+
+{{> sections.footer }}
